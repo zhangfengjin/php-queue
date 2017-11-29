@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+/**
+ * 命令入口
+ * 启动队列:php art worker:start --queue=queue1,queue2 --tries=3 --sleep=3
+ * 停止队列:php art worker:stop
+ * 重新执行失败的队列:php art worker:retry --queue=queue1,queue2
+ */
+require_once __DIR__ . "/../vendor/autoload.php";
+$daemon = new \Queue\DaemonQueue();
+$daemon->daemon($argv);

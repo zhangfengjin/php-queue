@@ -1,0 +1,23 @@
+{
+  "name": "php-queue/php-queue",
+  "type": "library",
+  "description": "php queue",
+  "keywords": [
+    "queue",
+    "php-queue"
+  ],
+  "authors": [
+    {
+      "name": "zhangfengjin",
+      "email": "793665131@qq.com"
+    }
+  ],
+  "require": {
+    "predis/predis": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Queue\\": "src/"
+    }
+  }
+}
