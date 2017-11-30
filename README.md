@@ -10,3 +10,10 @@ php-queue 是一个基于php的包，目前仅支持redis存储（对于有其�
 开启队列：php art worker:start:1 --queue=send1,send2 --tries=3 --sleep=3
 关闭队列：php art worker:stop
 重新执行失败队列：php art worker:retry --queue=send1,send2 --tries=3 --sleep
+# 目录结构
+├── bin                         // art命令
+├── example                     // 示例
+│   ├── Queue.php               // 队列任务添加示例
+├── src
+|   ├── Bootstrap
+......
