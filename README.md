@@ -14,6 +14,6 @@ php-queue 是一个基于php的包，目前仅支持redis存储（对于有其�
 ├── bin                         // art命令<br/>
 ├── example                     // 示例<br/>
 │   ├── Queue.php               // 队列任务添加示例<br/>
-├── src
+├── src<br/>
 |   ├── Bootstrap<br/>
 ......
