@@ -5,7 +5,7 @@
  * Date: 2017/11/24
  */
 
-namespace Queue\Queue;
+namespace XYLibrary\Queue;
 
 
 abstract class Queue
@@ -35,7 +35,7 @@ abstract class Queue
     {
         return [
             "displayName" => $this->getDisplayName($job),
-            "handler" => 'Queue\Queue\QueueHandler@run',
+            "handler" => 'XYLibrary\Queue\QueueHandler@run',
             "maxTries" => isset($job->tries) ? $job->tries : null,
             "data" => [
                 "commandName" => get_class($job),

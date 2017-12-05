@@ -5,7 +5,7 @@
  * Time: 20:02
  */
 
-namespace Queue\Support;
+namespace XYLibrary\Support;
 
 
 interface Factory

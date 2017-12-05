@@ -4,7 +4,7 @@
  * Date: 2017/11/24
  */
 
-namespace Queue\Queue;
+namespace XYLibrary\Queue;
 
 
 class QueueManager
@@ -76,7 +76,7 @@ class QueueManager
      */
     protected function getDefaultDriver()
     {
-        return $this->app["config"]["support"]["default"];
+        return $this->app["config"]["queue"]["default"];
     }
 
     /**
@@ -86,6 +86,6 @@ class QueueManager
      */
     protected function getConfig($driver)
     {
-        return $this->app["config"]["support"]["queue"][$driver];
+        return $this->app["config"]["queue"]["connections"][$driver];
     }
 }

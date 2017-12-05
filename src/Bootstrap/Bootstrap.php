@@ -5,15 +5,17 @@
  * Date: 2017/11/29
  */
 
-namespace Queue\Bootstrap;
+namespace XYLibrary\Bootstrap;
 
 
-use Queue\Daemon\Daemon;
-use Queue\Exception\ExceptionHandler;
-use Queue\Facade\Facade;
-use Queue\Queue\Connectors\RedisConnector;
-use Queue\Queue\Worker;
-use Queue\Support\Redis\RedisManager;
+use XYLibrary\Daemon\Daemon;
+use XYLibrary\Exception\ExceptionHandler;
+use XYLibrary\Facade\Facade;
+use XYLibrary\IoC\Container;
+use XYLibrary\Queue\Connectors\RedisConnector;
+use XYLibrary\Queue\QueueManager;
+use XYLibrary\Queue\Worker;
+use XYLibrary\Support\Redis\RedisManager;
 
 class Bootstrap
 {
@@ -21,7 +23,7 @@ class Bootstrap
 
     public function __construct()
     {
-        $this->app = new \Queue\IoC\Container();
+        $this->app = new Container();
         Facade::setFacadeApplication($this->app);
     }
 
@@ -62,7 +64,23 @@ class Bootstrap
     protected function registerConfig()
     {
         $this->app->bind("config", function ($app) {
-            return require __DIR__ . "/../Config/support.php";
+            $configs = [];
+            $dir = __DIR__ . "/../Config/";
+            if (is_dir($dir)) {
+                if ($handler = opendir($dir)) {
+                    while (($file = readdir($handler)) !== false) {
+                        $paths = pathinfo($file);
+                        if ($file != "." && $file != ".."
+                            && strtolower($paths["extension"]) == "php"
+                        ) {
+                            $configs[$paths["filename"]] = require $dir . $file;
+                        }
+                    }
+                }
+            } else {
+                throw new \RuntimeException("load config error,no exists $dir");
+            }
+            return $configs;
         });
     }
 
@@ -72,8 +90,7 @@ class Bootstrap
     protected function registerRedis()
     {
         $this->app->bind("redis", function ($app) {
-            $driver = $app["config"]["support"]["default"];
-            $config = $app["config"]["support"][$driver];
+            $config = $app["config"]["database"]["redis"];
             return new RedisManager($config["client"], $config);
         });
     }
@@ -84,7 +101,7 @@ class Bootstrap
     protected function registerQueue()
     {
         $this->app->bind("queue", function ($app) {
-            return $this->tap(new \Queue\Queue\QueueManager($app), function ($manager) {
+            return $this->tap(new QueueManager($app), function ($manager) {
                 $manager->addConnector("redis", function () {
                     return new RedisConnector($this->app["redis"]);
                 });

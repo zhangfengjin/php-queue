@@ -5,11 +5,11 @@
  * Date: 2017/11/27
  */
 
-namespace Queue\Queue\Jobs;
+namespace XYLibrary\Queue\Jobs;
 
 
-use Queue\IoC\Container;
-use Queue\Queue\RedisQueue;
+use XYLibrary\IoC\Container;
+use XYLibrary\Queue\RedisQueue;
 
 class RedisJob extends Job implements JobInterface
 {

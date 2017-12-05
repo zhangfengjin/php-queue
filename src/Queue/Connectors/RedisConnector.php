@@ -5,11 +5,11 @@
  * Date: 2017/11/24
  */
 
-namespace Queue\Queue\Connectors;
+namespace XYLibrary\Queue\Connectors;
 
 
-use Queue\Queue\RedisQueue;
-use Queue\Support\Redis\RedisManager;
+use XYLibrary\Queue\RedisQueue;
+use XYLibrary\Support\Redis\RedisManager;
 
 class RedisConnector implements ConnectInterface
 {

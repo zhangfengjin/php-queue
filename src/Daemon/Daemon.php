@@ -5,10 +5,10 @@
  * Date: 2017/11/28
  */
 
-namespace Queue\Daemon;
+namespace XYLibrary\Daemon;
 
 
-use Queue\Queue\Worker;
+use XYLibrary\Queue\Worker;
 
 class Daemon
 {

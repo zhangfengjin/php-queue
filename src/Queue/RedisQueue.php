@@ -9,11 +9,11 @@
  * Date: 2017/11/24
  */
 
-namespace Queue\Queue;
+namespace XYLibrary\Queue;
 
 
-use Queue\Queue\Jobs\RedisJob;
-use Queue\Support\Redis\RedisManager;
+use XYLibrary\Queue\Jobs\RedisJob;
+use XYLibrary\Support\Redis\RedisManager;
 
 class RedisQueue extends Queue
 {

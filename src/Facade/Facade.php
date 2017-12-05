@@ -6,7 +6,7 @@
  * Time: 19:21
  */
 
-namespace Queue\Facade;
+namespace XYLibrary\Facade;
 
 
 class Facade

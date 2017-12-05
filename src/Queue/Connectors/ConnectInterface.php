@@ -5,7 +5,7 @@
  * Date: 2017/11/24
  */
 
-namespace Queue\Queue\Connectors;
+namespace XYLibrary\Queue\Connectors;
 
 
 interface ConnectInterface

@@ -5,7 +5,7 @@
  * Time: 20:09
  */
 
-namespace Queue\Support\Redis\Connectors;
+namespace XYLibrary\Support\Redis\Connectors;
 
 
 use Predis\Client;

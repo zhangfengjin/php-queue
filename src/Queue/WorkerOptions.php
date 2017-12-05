@@ -5,7 +5,7 @@
  * Time: 23:21
  */
 
-namespace Queue\Queue;
+namespace XYLibrary\Queue;
 
 
 class WorkerOptions

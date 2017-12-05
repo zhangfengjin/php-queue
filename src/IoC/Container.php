@@ -6,7 +6,7 @@
  * Time: 21:22
  */
 
-namespace Queue\IoC;
+namespace XYLibrary\IoC;
 
 
 class Container implements \ArrayAccess

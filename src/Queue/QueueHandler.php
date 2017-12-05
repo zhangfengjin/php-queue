@@ -5,7 +5,7 @@
  * Date: 2017/11/27
  */
 
-namespace Queue\Queue;
+namespace XYLibrary\Queue;
 
 
 class QueueHandler

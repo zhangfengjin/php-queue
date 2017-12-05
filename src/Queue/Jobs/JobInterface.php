@@ -5,7 +5,7 @@
  * Date: 2017/11/27
  */
 
-namespace Queue\Queue\Jobs;
+namespace XYLibrary\Queue\Jobs;
 
 
 interface JobInterface

@@ -5,11 +5,11 @@
  * Time: 20:04
  */
 
-namespace Queue\Support\Redis;
+namespace XYLibrary\Support\Redis;
 
 
-use Queue\Support\Factory;
-use Queue\Support\Redis\Connectors\PredisConnector;
+use XYLibrary\Support\Factory;
+use XYLibrary\Support\Redis\Connectors\PredisConnector;
 
 class RedisManager implements Factory
 {

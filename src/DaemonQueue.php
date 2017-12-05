@@ -5,10 +5,11 @@
  * Date: 2017/11/29
  */
 
-namespace Queue;
+namespace XYLibrary;
 
 
-use Queue\Bootstrap\Bootstrap;
+use XYLibrary\Bootstrap\Bootstrap;
+use XYLibrary\Queue\WorkerOptions;
 
 class DaemonQueue
 {
@@ -77,7 +78,7 @@ class DaemonQueue
      */
     protected function resolveOptions($argvs)
     {
-        $workerOptions = new \Queue\Queue\WorkerOptions();
+        $workerOptions = new WorkerOptions();
         for ($idx = 2; $idx < count($argvs); $idx++) {
             $attributes = explode("=", str_replace("--", "", $argvs[$idx]));
             if (count($attributes) == 2) {

@@ -5,10 +5,10 @@
  * Date: 2017/11/23
  */
 
-namespace Queue\Queue;
+namespace XYLibrary\Queue;
 
 
-use Queue\Queue\Jobs\JobInterface;
+use XYLibrary\Queue\Jobs\JobInterface;
 
 class Worker
 {

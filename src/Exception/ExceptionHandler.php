@@ -5,7 +5,7 @@
  * Date: 2017/11/28
  */
 
-namespace Queue\Exception;
+namespace XYLibrary\Exception;
 
 
 class ExceptionHandler
