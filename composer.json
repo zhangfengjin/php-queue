@@ -13,7 +13,8 @@
     }
   ],
   "require": {
-    "predis/predis": "^1.0"
+    "predis/predis": "^1.0",
+    "php-framework/php-framework": "dev-master"
   },
   "autoload": {
     "psr-4": {
