@@ -12,8 +12,8 @@
 namespace XYLibrary\Queue;
 
 
+use XYLibrary\Contracts\Redis\Factory as Redis;
 use XYLibrary\Queue\Jobs\RedisJob;
-use XYLibrary\Support\Redis\RedisManager;
 
 class RedisQueue extends Queue
 {
@@ -21,7 +21,7 @@ class RedisQueue extends Queue
 
     protected $config;
 
-    public function __construct(RedisManager $redisManager, array $config)
+    public function __construct(Redis $redisManager, array $config)
     {
         $this->redisManager = $redisManager;
         $this->config = $config;

@@ -5,11 +5,8 @@
  * Date: 2017/11/29
  */
 
-namespace XYLibrary;
+namespace XYLibrary\Queue;
 
-
-use XYLibrary\Bootstrap\Bootstrap;
-use XYLibrary\Queue\WorkerOptions;
 
 class DaemonQueue
 {
@@ -21,7 +18,7 @@ class DaemonQueue
      */
     protected function bootstrap()
     {
-        $bootStrap = new Bootstrap();
+        $bootStrap = new Bootstrap(false);
         $bootStrap->bootstrap();
         $this->app = $bootStrap->getContainer();
     }

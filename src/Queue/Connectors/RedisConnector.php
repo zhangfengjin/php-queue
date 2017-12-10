@@ -8,14 +8,14 @@
 namespace XYLibrary\Queue\Connectors;
 
 
+use XYLibrary\Contracts\Redis\Factory as Redis;
 use XYLibrary\Queue\RedisQueue;
-use XYLibrary\Support\Redis\RedisManager;
 
 class RedisConnector implements ConnectInterface
 {
     protected $redisManager;
 
-    public function __construct(RedisManager $redisManager)
+    public function __construct(Redis $redisManager)
     {
         $this->redisManager = $redisManager;
     }
