@@ -7,5 +7,5 @@
  * 重新执行失败的队列:php art worker:retry --queue=queue1,queue2
  */
 require_once __DIR__ . "/../vendor/autoload.php";
-$daemon = new \XYLibrary\DaemonQueue();
+$daemon = new \XYLibrary\Queue\DaemonQueue();
 $daemon->daemon($argv);
