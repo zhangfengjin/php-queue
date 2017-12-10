@@ -7,18 +7,18 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 
-//队列调用方式
-$bootStrap = new \XYLibrary\Bootstrap\Bootstrap();
+//队列调用方式 真实业务用参数不传递或true
+$bootStrap = new  \XYLibrary\Queue\Bootstrap(false);
 $bootStrap->bootstrap();
 $job = new \XYLibrary\SendEmailJob();
-\XYLibrary\Facade\Queue::push($job, "send1");
-\XYLibrary\Facade\Queue::push($job, "send2");
-\XYLibrary\Facade\Queue::push($job, "send1");
-\XYLibrary\Facade\Queue::push($job, "send3");
-\XYLibrary\Facade\Queue::later(5, $job, "send1");
-\XYLibrary\Facade\Queue::later(5, $job, "send2");
-\XYLibrary\Facade\Queue::later(5, $job, "send2");
-\XYLibrary\Facade\Queue::later(5, $job, "send3");
+\XYLibrary\Queue\Facade\Queue::push($job, "send1");
+\XYLibrary\Queue\Facade\Queue::push($job, "send2");
+\XYLibrary\Queue\Facade\Queue::push($job, "send1");
+\XYLibrary\Queue\Facade\Queue::push($job, "send3");
+\XYLibrary\Queue\Facade\Queue::later(5, $job, "send1");
+\XYLibrary\Queue\Facade\Queue::later(5, $job, "send2");
+\XYLibrary\Queue\Facade\Queue::later(5, $job, "send2");
+\XYLibrary\Queue\Facade\Queue::later(5, $job, "send3");
 echo "end\r\n";
 
 
